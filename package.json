@@ -1,0 +1,26 @@
+{
+  "name": "shop_management_api",
+  "version": "1.0.0",
+  "description": "Shop Management API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node -r esm src/server.js",
+    "dev": "nodemon -r esm src/server.js"
+  },
+  "author": "shohedul",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.28.0"
+  }
+}
