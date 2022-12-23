@@ -1,7 +1,7 @@
-import userRoutesConfigure from './userRoutes';
+import productRoutesConfigure from './productRoutes';
 
 const configureAllRoutes = (app) => {
-  userRoutesConfigure(app);
+  productRoutesConfigure(app);
 };
 
 export default configureAllRoutes;

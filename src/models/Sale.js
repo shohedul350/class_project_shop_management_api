@@ -7,19 +7,13 @@ const ProductModel = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    quantity: {
+      type: DataTypes.INTEGER,
     },
     price: {
       type: DataTypes.INTEGER,
     },
-    description: {
-      type: DataTypes.TEXT,
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
-    },
+
     // published: {
     //   type: DataTypes.BOOLEAN,
     // },

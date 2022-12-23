@@ -41,13 +41,13 @@ const sequelize = new Sequelize('test', 'emon', 'emon', {
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    // const db = {};
-    // db.Sequelize = Sequelize;
-    // db.sequelize = sequelize;
+    const db = {};
+    db.Sequelize = Sequelize;
+    db.sequelize = sequelize;
 
-    // db.products = products(sequelize, DataTypes);
+    db.products = products(sequelize, DataTypes);
 
-    // db.sequelize.sync({ force: false });
+    db.sequelize.sync({ force: false });
     console.log('SQL Connected ');
   } catch (err) {
     console.error(err);
