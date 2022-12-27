@@ -3,6 +3,7 @@ import {
   addNewSale,
   getAllSale,
   countSale,
+  getOrderDetails,
   // deleteProduct,
   // countProduct,
   // stockProduct,
@@ -11,6 +12,7 @@ import {
 const router = express.Router();
 
 router.route('/').post(addNewSale).get(getAllSale);
+router.route('/details/:id').get(getOrderDetails);
 router.route('/count').get(countSale);
 // router.route('/stock').get(stockProduct);
 
