@@ -35,7 +35,7 @@ export const deleteProductService = async (id) => {
 export const updateProductService = async (id, data) => {
   const results = await sequelize.query(
     `UPDATE products
-    SET title = ${data.title}, price = ${data.price}, description = ${data.description}, quantity = ${data.quantity}, WHERE id=${id};`,
+    SET title = '${data.title}', price = ${data.price}, description = '${data.description}', quantity = ${data.quantity} WHERE id=${id};`,
     {
       type: QueryTypes.UPDATE,
     },
@@ -45,7 +45,7 @@ export const updateProductService = async (id, data) => {
 
 export const countProductService = async () => {
   const results = await sequelize.query(
-    'SELECT COUNT(id) FROM products;',
+    'SELECT COUNT(id) AS count FROM products;',
     {
       type: QueryTypes.SELECT,
     },
@@ -55,7 +55,7 @@ export const countProductService = async () => {
 
 export const stockProductService = async () => {
   const results = await sequelize.query(
-    'SELECT SUM(quantity) FROM products;',
+    'SELECT SUM(quantity) AS count FROM products;',
     {
       type: QueryTypes.SELECT,
     },
