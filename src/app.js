@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import configureAllRoutes from './routes/index';
 import { handleError } from './middlewares/index';
 // config environment variable
-dotenv.config({ path: './config/config.env' });
+dotenv.config();
 const app = express();
 app.use(express.json());
 // all routes connect

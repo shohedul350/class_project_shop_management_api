@@ -1,25 +1,30 @@
 import { Sequelize, DataTypes } from 'sequelize';
+import dotenv from 'dotenv';
 // eslint-disable-next-line import/extensions
 import products from './models/Products';
 
-const dbConfig = {
-  HOST: 'localhost',
-  USER: 'emon',
-  PASSWORD: 'emon',
-  DB: 'test',
-  dialect: 'mysql',
+dotenv.config();
 
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
-};
-const sequelize = new Sequelize('test', 'emon', 'emon', {
-  host: 'localhost',
-  dialect: 'mysql', /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
+console.log(process.env.DB);
+const sequelize = new Sequelize(process.env.DB, process.env.MYSQL_USER, process.env.DB_PASSWORD, {
+  host: process.env.HOST,
+  dialect: 'mysql',
 });
+
+// CREATE TABLE products (
+//   id int NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+//   title varchar(255),
+//   price int,
+//   description varchar(255),
+//   quantity int
+// );
+// CREATE TABLE orders (
+//   id int NOT NULL PRIMARY KEY  AUTO_INCREMENT ,
+//   OrderNumber int NOT NULL,
+//   customerName varchar(255),
+//   productId int,
+//   FOREIGN KEY (productId) REFERENCES products(id)
+// );
 
 const connectDB = async () => {
   try {
