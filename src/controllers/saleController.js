@@ -5,9 +5,8 @@ import {
   createOrderDetailsService,
   getAlSaleService,
   getOrderDetailsService,
-  // updateProductService,
-  // deleteProductService,
-  countProductService,
+  saleCountService,
+  saleAmountService
   // stockProductService,
 } from '../services/saleService';
 import { NotFound } from '../utils/generalError';
@@ -38,8 +37,13 @@ export const getOrderDetails = asyncHandler(async (req, res) => {
   return res.status(200).json({ data, msg: 'Order Details fetch successfully' });
 });
 // console.log(totalAmount);
-export const countSale = asyncHandler(async (req, res) => {
-  const result = await countProductService();
+export const saleCount = asyncHandler(async (req, res) => {
+  const result = await saleCountService();
+  return res.status(200).json({ data: result, msg: 'Fetch successfully' });
+});
+
+export const saleAmount = asyncHandler(async (req, res) => {
+  const result = await saleAmountService();
   return res.status(200).json({ data: result, msg: 'Fetch successfully' });
 });
 

@@ -2,7 +2,8 @@ import express from 'express';
 import {
   addNewSale,
   getAllSale,
-  countSale,
+  saleCount,
+  saleAmount,
   getOrderDetails,
   // deleteProduct,
   // countProduct,
@@ -13,7 +14,8 @@ const router = express.Router();
 
 router.route('/').post(addNewSale).get(getAllSale);
 router.route('/details/:id').get(getOrderDetails);
-router.route('/count').get(countSale);
+router.route('/sale-count').get(saleCount);
+router.route('/sale-amount').get(saleAmount);
 // router.route('/stock').get(stockProduct);
 
 const configure = (app) => {

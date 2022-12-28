@@ -63,9 +63,9 @@ export const updateProductService = async (id, data) => {
   return results;
 };
 
-export const countProductService = async () => {
+export const saleCountService = async () => {
   const results = await sequelize.query(
-    'SELECT COUNT(id) AS count FROM products;',
+    'SELECT COUNT(quantity) AS count FROM order_details;',
     {
       type: QueryTypes.SELECT,
     },
@@ -73,9 +73,9 @@ export const countProductService = async () => {
   return results;
 };
 
-export const stockProductService = async () => {
+export const saleAmountService = async () => {
   const results = await sequelize.query(
-    'SELECT SUM(quantity) AS count FROM products;',
+    'SELECT SUM(total_price) AS count FROM orders;',
     {
       type: QueryTypes.SELECT,
     },
